@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 import toast from 'react-hot-toast'
 
-const ADMIN_PASSWORD = 'battlebots2025' // Change this!
+const ADMIN_PASSWORD = 'bb25' 
 
 const AUCTION_CATEGORIES = ['Weapon', 'Armor', 'Drive System', 'Electronics', 'Special']
 const WEIGHT_CLASSES = ['Featherweight', 'Lightweight', 'Middleweight', 'Heavyweight']
