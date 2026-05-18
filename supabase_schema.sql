@@ -1,6 +1,6 @@
 -- =============================================
 -- BATTLE BOTS EVENT MANAGEMENT SCHEMA
--- Run this in your Supabase SQL Editor
+
 -- =============================================
 
 -- Teams / Participants table
