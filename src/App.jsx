@@ -12,6 +12,7 @@ import Matches from './pages/Matches'
 import Admin from './pages/Admin'
 import Teams from './pages/Teams'
 
+
 export default function App() {
   const [loading, setLoading] = useState(true)
   const location = useLocation()

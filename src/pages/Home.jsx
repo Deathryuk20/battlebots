@@ -38,12 +38,17 @@ function Countdown({ targetDate }) {
 }
 
 const features = [
-  { icon: '🤖', title: 'Team Registration', desc: 'Register your bot with full specifications, team details, and weight class selection.' },
-  { icon: '⚡', title: 'Live Auction', desc: 'Bid on exclusive components and power-ups using your team\'s allocated points.' },
-  { icon: '🏆', title: 'Live Brackets', desc: 'Track every match in real-time from qualifiers to the championship final.' },
-  { icon: '📊', title: 'Leaderboard', desc: 'See where your team stands in the overall rankings based on wins and performance.' },
-  { icon: '📣', title: 'Announcements', desc: 'Stay updated with live announcements from the event administrators.' },
-  { icon: '🎯', title: 'Weight Classes', desc: 'Compete in Featherweight, Lightweight, Middleweight, or Heavyweight divisions.' },
+  { icon: '🤖', title: 'Team Registration', desc: 'Register your bot with full specifications, team details, and weight class selection.', path: '/register' },
+  
+  { icon: '⚡', title: 'Live Auction', desc: 'Bid on exclusive components and power-ups using your team\'s allocated points.', path: '/auction' },
+  
+  { icon: '🏆', title: 'Live Brackets', desc: 'Track every match in real-time from qualifiers to the championship final.', path: '/matches' },
+  
+  { icon: '📊', title: 'Leaderboard', desc: 'See where your team stands in the overall rankings based on wins and performance.', path: '/leaderboard' },
+  
+  { icon: '📣', title: 'Announcements', desc: 'Stay updated with live announcements from the event administrators.', path: '/' },
+  
+  { icon: '🎯', title: 'Weight Classes', desc: 'Compete in Featherweight, Lightweight, Middleweight, or Heavyweight divisions.', path: '/register' },
 ]
 
 const BOT_EMOJIS = ['🤖', '⚙️', '🔩', '🦾', '🔧', '💀', '🛡️', '⚡']
@@ -193,11 +198,21 @@ export default function Home() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
           {features.map((f, i) => (
-            <div key={i} className="card" style={{ animationDelay: `${i * 0.1}s` }}>
+            <Link 
+              to={f.path} 
+              key={i} 
+              className="card" 
+              style={{ 
+                animationDelay: `${i * 0.1}s`, 
+                textDecoration: 'none', // Keeps text from turning blue/underlined
+                color: 'inherit',       // Inherits your theme text color
+                display: 'block'        // Makes the entire card surface clickable
+              }}
+            >
               <div style={{ fontSize: 40, marginBottom: '1rem' }}>{f.icon}</div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, letterSpacing: 1, marginBottom: '0.5rem' }}>{f.title}</h3>
               <p style={{ fontSize: 14, color: 'var(--text-dim)', lineHeight: 1.6 }}>{f.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
